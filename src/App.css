@@ -1,38 +1,167 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600&display=swap');
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css");
+
+* {
+  font-family: 'Outfit';
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+section {
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(246, 244, 244);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.mainChat {
+  width: 65%;
+  height: 90vh;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  padding-left: 20px;
+  padding-right: 20px;
+
+}
+
+.mainChat .chat {
+  width: 100%;
+  height: 90%;
+  border-radius: 15px;
+  padding-top: 15px;
+
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  padding-bottom: 15px;
+
+}
+
+.mainChat .chat::-webkit-scrollbar {
+  display: none;
+}
+
+.mainChat .chat .message img {
+  width: 40px;
+
+}
+
+.mr {
+  margin-right: 10px;
+}
+
+.ml {
+  margin-left: 10px;
+}
+
+.mainChat .chat .message div {
+
+  width: max-content;
+  
+  height: max-content;
+  font-size: 13px;
+  border-radius: 12px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 4px 15px;
+  letter-spacing: 0.6px;
+  line-height: 20px;
+  
+
+
+  background-color: rgb(234, 234, 234);
 }
 
-.App-link {
-  color: #61dafb;
+.mainChat .chat .message {
+  display: flex;
+
+
+  align-items: center;
+
+  margin-top: 30px;
+  width: 100%;
+
 }
 
-@keyframes App-logo-spin {
-  from {
+.flx-end {
+  justify-content: flex-end;
+}
+
+
+.mainChat .promptInput {
+  border-radius: 15px;
+  margin: auto;
+  width: 95%;
+
+
+  height: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+
+}
+
+.mainChat .promptInput input {
+  width: 88%;
+
+  padding: 12px;
+  border: none;
+
+
+}
+.mainChat .promptInput img{
+  padding-right: 10px;
+
+}
+
+.mainChat .promptInput input:focus {
+  outline: none;
+
+
+}
+
+i {
+  color: darkgray;
+  font-size: 18px;
+  cursor: pointer;
+  transition: 200ms;
+}
+
+i:hover {
+  transform: scale(1.2);
+  color: #3EAC2C;
+}
+
+@keyframes spin {
+  0% {
     transform: rotate(0deg);
   }
-  to {
+
+  100% {
     transform: rotate(360deg);
+  }
+}
+
+.spinner {
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-left: 4px solid #3EAC2C;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  animation: spin 0.5s linear infinite;
+}
+
+@media(max-width:700px) {
+  .mainChat {
+    width: 100%;
+    height: 100vh;
   }
 }
